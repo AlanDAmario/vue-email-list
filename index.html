@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email list</title>
 </head>
+
 <body>
     <div class="div" id="app">
-        <ul>
-            <li >
-
-            </li>
-        </ul>
+        <!-- CONDIZIONE PER FAR APPARIRE O MENO LA LISTA -->
+        <div v-if="randomEmail.length">
+            <ul>
+                <li v-for="(email, index) in randomEmail">
+                    <!-- {{EMAIL}} è L ELEMENTO CICLATO NELL URL IN JS -->
+                    <p>{{email}}</p>
+                </li>
+            </ul>
+        </div>
+        <h2 v-else>Caricamento email in corso...</h2>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
